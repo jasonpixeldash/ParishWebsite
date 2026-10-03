@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parish — events across south Louisiana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620;9..144,700&family=Outfit:wght@380;500;640&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="mast">
+  <p class="eyebrow">South Louisiana</p>
+  <h1>Parish</h1>
+  <div class="rule"></div>
+  <p class="tagline">Events across Baton Rouge, Lafayette, Thibodaux, and New Orleans.</p>
+</header>
+<main>
+  <section class="controls" aria-label="Filter events">
+    <label class="search">
+      <span class="sr">Search events</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="search" type="search" placeholder="Search shows, venues, cities" autocomplete="off">
+    </label>
+    <div class="row" id="city-filters"></div>
+    <div class="row" id="category-filters"></div>
+    <div class="row tools">
+      <button type="button" id="free-toggle" class="chip" aria-pressed="false">Free</button>
+      <div class="range" id="range-filters" role="group" aria-label="Date range"></div>
+      <div class="views" role="group" aria-label="View">
+        <button type="button" id="view-grid" class="chip on" aria-pressed="true">Grid</button>
+        <button type="button" id="view-cal" class="chip" aria-pressed="false">Calendar</button>
+      </div>
+    </div>
+    <p class="meta" id="meta"></p>
+  </section>
+  <div id="date-strip" class="date-strip" hidden></div>
+  <section id="results" class="results" aria-live="polite"></section>
+</main>
+<footer>
+  <p>Parish covers Baton Rouge, Lafayette, Thibodaux, and New Orleans.</p>
+  <p>Listings come from public calendars and a signed-in Facebook pass on October 3, 2026. Private Instagram posts and unlisted events may be missing. Prices are copied from sources and left blank when a page did not state one.</p>
+</footer>
+<div id="panel" class="panel" hidden>
+  <div class="panel-card" role="dialog" aria-modal="true" aria-labelledby="panel-title">
+    <button type="button" id="panel-close" class="close">Close</button>
+    <div id="panel-body"></div>
+  </div>
+</div>
+<script src="data/events.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
